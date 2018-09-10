@@ -1,0 +1,54 @@
+// Place all the styles related to the Gifs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  padding: 2em;
+  text-align: center;
+  background-image: image_url("bg.png");
+  background-attachment: fixed;
+  font-size: 1rem !important;
+  font-family: "Quicksand", sans-serif !important;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+  grid-gap: 2vw;
+}
+
+img {
+  width: 100%;
+  border: 20px solid white;
+}
+
+.new_gif {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.panel {
+  background: white;
+  padding: 20px;
+}
+
+.close {
+  top: 0;
+  position: absolute;
+  right: 5px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.item {
+  position: relative;
+}
+
+.hide {
+  position: absolute;
+  right: 9999px;
+}

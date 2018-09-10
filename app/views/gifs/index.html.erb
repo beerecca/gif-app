@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel">
+<h1>Giftastic</h1>
+
+<br>
+<h4>Add a new gif</h4>
+
+<%= render 'form' %>
+
+</div>
+<br>
+<br>
+<br>
+<div class="panel">
+
+<a class="btn btn-outline-secondary" href="/gifs">All</a>
+<% @gifs.map {|a| a.emotion_list}.uniq.each do |emotion| %>
+    <a class="btn btn-outline-secondary" href="/gifs?emotion=<%= emotion %>"><%= emotion.titlecase %></a>
+<% end %>
+
+</div>
+<br>
+<br>
+
+<div class="grid">
+<% @gifs.reverse.each do |gif| %>
+    <div class="item">
+        <a href="#" onclick="copyToClipboard('<%= gif.img %>')"><img src="<%= gif.img %>"/></a>
+        <input class="hide" type="text" value="<%= gif.img %>" id="<%= gif.img %>">
+        <%= link_to 'x', gif, method: :delete, class: "close", data: { confirm: 'Are you sure?' } %>
+    </div>
+<% end %>
+</div>
+<br>
